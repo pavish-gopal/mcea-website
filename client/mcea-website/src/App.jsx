@@ -11,12 +11,16 @@ import History from './components/History/History';
 
 import Login from "./components/Login/Login.jsx";
 import Signup from "./components/Signup/Signup.jsx";
-import Navbar from "./components/Navbar/Navbar";
+import Navbar1 from "./components/Navbar/Navbar";
+import ParticleBackground from "./particles/particle-baground/ParticlesBaground";
+import Contacts from "./components/contacts/Contacts";
+
 function App() {
   
   return (
     <BrowserRouter>
-      <Navbar></Navbar>
+      <Navbar1></Navbar1>
+      <ParticleBackground > </ParticleBackground>
       <Routes>
           <Route path="/login" element={<Login/>}></Route>
           <Route path="/signup" element={<Signup/>}></Route>
@@ -25,7 +29,7 @@ function App() {
           <Route path="/events" element={<Events/>}></Route>
           <Route path="/history" element={<History/>}></Route>
       </Routes> 
-     
+      <Contacts></Contacts>
     </BrowserRouter>
   );
 }

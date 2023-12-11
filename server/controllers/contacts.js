@@ -22,10 +22,10 @@ export const postContacts=async(req,res)=>{
             let newContacts=await Contact.create(data);
             await newContacts.save();
         
-            res.status(201).json({data:newContacts,message:"created successfully"});
+            res.status(201).json([newContacts]);
         }
         else{
-            let newContacts=await Contact.create(data);
+            let newContacts=await Contact.create([data]);
         await newContacts.save();
         
         res.status(201).json({data:newContacts,message:"created successfully"});

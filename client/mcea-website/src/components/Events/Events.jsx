@@ -2,6 +2,11 @@ import React,{useEffect,useState} from 'react';
 import {useSelector,useDispatch} from 'react-redux';
 import { get_events,post_events,update_events,delete_events } from '../../actions/events';
 import Event from './Event/Event.jsx';
+import './styles.css';
+
+//bootstraps
+import { Container,Card,Row,Col,Form,FloatingLabel,Button,Carousel } from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default function Events() {
   const dispatch=useDispatch();
@@ -10,7 +15,7 @@ export default function Events() {
   const [editEvent,setEditEvent]=useState(false);
   const [deleteEvent,setDeleteEvent]=useState(false);
   const [Id,setId]=useState(null);
-  const [Form,setForm]=useState({
+  const [FormData,setForm]=useState({
     eventName:"",
     eventImage:"",
     rules:[],
@@ -34,10 +39,10 @@ export default function Events() {
 
   const handleChange=(e)=>{
     if((e.target.name==="rules")||(e.target.name==="specifications")||(e.target.name==="StudentCoordinators")){
-      setForm({...Form,[e.target.name]:e.target.value.split(",")})
+      setForm({...FormData,[e.target.name]:e.target.value.split(",")})
     }
     else{
-      setForm({...Form,[e.target.name]:e.target.value});
+      setForm({...FormData,[e.target.name]:e.target.value});
     }
     
     
@@ -45,10 +50,10 @@ export default function Events() {
 const handleSubmit=(e)=>{
   e.preventDefault();
   if(editEvent){
-    dispatch(update_events(Id,Form));
+    dispatch(update_events(Id,FormData));
   }
   else{
-  dispatch(post_events(Form));
+  dispatch(post_events(FormData));
   }
   //clearing all like id edit state etc
   setId(null);
@@ -92,29 +97,47 @@ const handleSubmit=(e)=>{
     setEditEvent(false);
   }
   return (
-    <div>
-      
-      <div>{
+    <div className="wrapper">
+      <span classname="eve">Events</span>
+      <Carousel>
+        {
         data.map((e)=>(
-          <Event data={e} options={edit} Edit={Edit} Delete={Delete}> 
-
-          </Event>
+          <Carousel.Item >
+            <Container><Event data={e} options={edit} Edit={Edit} Delete={Delete}> </Event></Container>
+          </Carousel.Item>
         
         ))
-        }</div>
+        }</Carousel>
 
-        {(edit)&&<div>
-          <form onSubmit={handleSubmit}>
-            <input name="eventName" onChange={handleChange} value={Form.eventName} placeholder="Enter Event Name"></input>
-            <input name="eventImage"  type="file" onChange={handleChange} value={Form.eventImage} ></input>
-            <input name="rules" onChange={handleChange} value={Form.rules} placeholder="Enter rules"></input>
-            <input name="specifications" onChange={handleChange} value={Form.specifications} placeholder="Enter specifications"></input>
-            <input name="StudentCoordinators" onChange={handleChange} value={Form.StudentCoordinators} placeholder="Enter StudentCoordinators"></input>
-            <input name="RegistrationFees" onChange={handleChange} value={Form.RegistrationFees} placeholder="Enter RegistrationFees"></input>
-            <input name="RegistrationLink" onChange={handleChange} value={Form.RegistrationLink} placeholder="Enter RegistrationLink"></input>
-            <button type="submit">submit</button>
-          </form>     
-        </div>}
+        {(edit)&&<Container>
+          <Form onSubmit={handleSubmit}>
+            <FloatingLabel controlId="floatingInput" label="Event Name" className="mb-3">
+              <Form.Control name="eventName" onChange={handleChange} value={FormData.eventName} placeholder="Enter Event Name" />
+            </FloatingLabel>
+            <input name="eventImage"  type="file" onChange={handleChange} value={FormData.eventImage} ></input>
+            <FloatingLabel controlId="floatingInput" label="Enter rules" className="mb-3">
+              <Form.Control name="rules" onChange={handleChange} value={FormData.rules} placeholder="Enter rules" />
+            </FloatingLabel>
+            <FloatingLabel controlId="floatingInput" label="Specifications" className="mb-3">
+              <Form.Control  name="specifications" onChange={handleChange} value={FormData.specifications} placeholder="Enter specifications"/>
+            </FloatingLabel><FloatingLabel controlId="floatingInput" label="Student Coordinators" className="mb-3">
+              <Form.Control name="StudentCoordinators" onChange={handleChange} value={FormData.StudentCoordinators} placeholder="Enter StudentCoordinators" />
+            </FloatingLabel><FloatingLabel controlId="floatingInput" label="RegistrationFees" className="mb-3">
+              <Form.Control name="RegistrationFees" onChange={handleChange} value={FormData.RegistrationFees} placeholder="Enter RegistrationFees" />
+            </FloatingLabel><FloatingLabel controlId="floatingInput" label="RegistrationLink" className="mb-3">
+              <Form.Control name="RegistrationLink" onChange={handleChange} value={FormData.RegistrationLink} placeholder="Enter RegistrationLink" />
+            </FloatingLabel>
+            <Button style={{background:"#08C6CF"}} type="submit">Submit</Button>
+            {/* <input name="eventName" onChange={handleChange} value={FormData.eventName} placeholder="Enter Event Name"></input>
+            <input name="eventImage"  type="file" onChange={handleChange} value={FormData.eventImage} ></input>
+            <input name="rules" onChange={handleChange} value={FormData.rules} placeholder="Enter rules"></input>
+            <input name="specifications" onChange={handleChange} value={FormData.specifications} placeholder="Enter specifications"></input>
+            <input name="StudentCoordinators" onChange={handleChange} value={FormData.StudentCoordinators} placeholder="Enter StudentCoordinators"></input>
+            <input name="RegistrationFees" onChange={handleChange} value={FormData.RegistrationFees} placeholder="Enter RegistrationFees"></input>
+            <input name="RegistrationLink" onChange={handleChange} value={FormData.RegistrationLink} placeholder="Enter RegistrationLink"></input>
+            <button type="submit">submit</button> */}
+          </Form>     
+        </Container>}
     </div>
   )
 }

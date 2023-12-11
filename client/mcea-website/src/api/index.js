@@ -22,6 +22,9 @@ API.interceptors.request.use(function (config) {
 export const fetch_home=()=>API.get(`${URL}`);
 export const post_home=(data)=>API.post(`${URL}`,data);
 
+//contacts
+export const fetch_contacts=()=>API.get(`${URL}contacts`);
+export const post_contacts=(data)=>API.post(`${URL}contacts`,data);
 
 //about
 export const fetch_about=()=>API.get(`${URL}about`);
@@ -41,3 +44,4 @@ export const delete_history=(id)=>API.delete(`${URL}history/${id}`);
 
 //user
 export const login_api=(username,password)=>API.get(`${URL}auth/${username}/${password}`);
+export const signup_api=(data)=>API.post(`${URL}auth`,data);

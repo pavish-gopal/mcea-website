@@ -2,6 +2,10 @@ import React, { useEffect,useState } from 'react';
 import { UseSelector,useDispatch, useSelector } from 'react-redux';
 import {get_history,post_history,update_history,delete_history} from "../../actions/history";
 import Event_card from './Event_card/Event_card.jsx';
+import './history.css';
+//bootstraps
+import { Container,Card,Row,Col,Form,FloatingLabel,Button,} from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default function History() {
   const dispatch=useDispatch();
@@ -11,7 +15,7 @@ export default function History() {
   const [editHistory,setEditHistory]=useState(false);
   const [deleteHistory,setDeleteHistory]=useState(false);
   const [Id,setId]=useState(null);
-  const [Form,setForm]=useState({
+  const [FormData,setForm]=useState({
     eventName:"",
     eventImage:"",
     EventDate:"",
@@ -33,16 +37,16 @@ useEffect(()=>{
   },[]);
   
   const handleChange=(e)=>{
-    setForm({...Form,[e.target.name]:e.target.value});
+    setForm({...FormData,[e.target.name]:e.target.value});
     
   }
   const handleSubmit=(e)=>{
       e.preventDefault();
       if(editHistory){
-        dispatch(update_history(Id,Form));
+        dispatch(update_history(Id,FormData));
       }
       else{
-      dispatch(post_history(Form));
+      dispatch(post_history(FormData));
       }
       //clearing all like id edit state etc
       setId(null);
@@ -77,24 +81,35 @@ useEffect(()=>{
         setEditHistory(false);
       }
   return (
-    <div>
-      
-      <div>
+    <Container>
+      <Row><div className='head-history'>History</div></Row>
+      <Row lg={3} md={2}>
         { 
-          data?.map((e)=>(<Event_card data={e} options={edit} Edit={Edit} Delete={Delete}></Event_card>))
+          data?.map((e)=>(<Col><Event_card data={e} options={edit} Edit={Edit} Delete={Delete}></Event_card></Col>))
         }
-      </div>
+      </Row>
       {(edit)&&<div>
-          <form onSubmit={handleSubmit}>
-            <input name="eventName" onChange={handleChange} value={Form.eventName} placeholder="Enter Event Name"></input>
-            <input name="eventImage"  type="file" onChange={handleChange} value={Form.eventImage} ></input>
-            <input name="EventDate" onChange={handleChange} value={Form.EventDate} placeholder="Enter Event date"></input>
-            <input name="Description" onChange={handleChange} value={Form.Description} placeholder="Enter Description"></input>
-            
-            <button type="submit">submit</button>
-          </form>     
+          <Form onSubmit={handleSubmit}>
+            <FloatingLabel controlId="floatingInput" label="Event Name" className="mb-3">
+              <Form.Control name="eventName" onChange={handleChange} value={FormData.eventName} placeholder="Enter Event Name" />
+            </FloatingLabel>
+            <input name="eventImage"  type="file" onChange={handleChange} value={FormData.eventImage} ></input>
+            <FloatingLabel controlId="floatingInput" label="Event date" className="mb-3">
+              <Form.Control name="EventDate" onChange={handleChange} value={FormData.EventDate} placeholder="Enter Event date" />
+            </FloatingLabel>
+            <FloatingLabel controlId="floatingInput" label="Description" className="mb-3">
+              <Form.Control name="Description" onChange={handleChange} value={FormData.Description} placeholder="Enter Description" />
+            </FloatingLabel>
+            <Button style={{background:"#08C6CF"}} type="submit">Button</Button>
+            {/* <input name="eventName" onChange={handleChange} value={FormData.eventName} placeholder="Enter Event Name"></input>
+            <input name="eventImage"  type="file" onChange={handleChange} value={FormData.eventImage} ></input>
+            <input name="EventDate" onChange={handleChange} value={FormData.EventDate} placeholder="Enter Event date"></input>
+            <input name="Description" onChange={handleChange} value={FormData.Description} placeholder="Enter Description"></input>
+             */}
+            {/* <button type="submit">submit</button> */}
+          </Form>     
         </div>}
         
-    </div>
+    </Container>
   )
 }

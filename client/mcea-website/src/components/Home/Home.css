@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap');
+
+
+  @import url('https://fonts.googleapis.com/css2?family=Young+Serif&display=swap');
+
+
+.Home-college-name{
+    font-size:40px;
+}
+.Home-eventName{
+    color:red;
+}
+.reg:hover{
+    text-decoration: none;
+    color:rgb(12, 243, 243);
+    
+    background-color:#fbfbfb;
+    border-radius: 5px;
+    padding:10px;
+}
+.reg
+{
+    text-decoration: none;
+    color:rgb(255, 255, 253);
+    background-color:#00E4FF;
+    border-radius: 5px;
+    padding:10px;
+    
+}
+
+
+.description{
+    font-family: 'Courier Prime', monospace;
+    color:#E3FDFD;
+    line-height: 2.5;
+}
+
+.titles{
+    font-family: 'Young Serif', serif;
+    font-size: 2rem;
+    color:#00E4FF;
+}
+
+.Home-college-name{
+    font-family: 'Young Serif', serif;
+    font-size: 1.5rem;
+    color:#00E4FF;
+}
+.Home-eventName{
+    font-family: 'Young Serif', serif;
+    font-size: 3rem;
+    margin-top:5%;
+    
+}
+.Home-eventDate{
+    font-family: 'Young Serif', serif;
+    font-size: 3rem;
+    margin-top:5%;
+}
+.Home-cashPrice{
+    font-family: 'Young Serif', serif;
+    font-size: 3rem;
+    margin-top:5%;
+}
+
+.Home-lastDateToRegister{
+    font-family: 'Young Serif', serif;
+    font-size: 3rem;
+    margin-top:5%;
+}

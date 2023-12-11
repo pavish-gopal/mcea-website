@@ -2,6 +2,11 @@ import React,{useEffect,useState} from 'react'
 import Officebearer from './Officebearer/Officebearer.jsx';
 import { useSelector,useDispatch } from 'react-redux';
 import {get_about,post_about,update_about,delete_about} from '../../actions/about.js';
+import './styles.css';
+//bootstraps
+import { Container,Card,Row,Col,Form,FloatingLabel,Button,} from 'react-bootstrap';
+
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default function About() {
   const dispatch=useDispatch();
@@ -11,7 +16,7 @@ export default function About() {
   const [editAbout,setEditAbout]=useState(false);
   const [deleteAbout,setDeleteAbout]=useState(false);
   const [Id,setId]=useState(null);
-  const [Form,setForm]=useState({
+  const [FormData,setForm]=useState({
     name:"",
     photo:"",
     posting:"",
@@ -33,16 +38,16 @@ useEffect(()=>{
   },[])
 
   const handleChange=(e)=>{
-    setForm({...Form,[e.target.name]:e.target.value});
+    setForm({...FormData,[e.target.name]:e.target.value});
     
   }
   const handleSubmit=(e)=>{
       e.preventDefault();
       if(editAbout){
-        dispatch(update_about(Id,Form));
+        dispatch(update_about(Id,FormData));
       }
       else{
-      dispatch(post_about(Form));
+      dispatch(post_about(FormData));
       }
       //clearing all like id edit state etc
       setId(null);
@@ -79,23 +84,51 @@ useEffect(()=>{
         setEditAbout(false);
       }
   return (
-    <div>
-      
-      <div>
+    <Container >
+      <Row><div className='head'>About</div></Row>
+      <Row><div className='abt-description'>Mechatronics Engineering Association is the brainchild of KEC Mechatronics formed with the intention of improving the 
+        skills and employability of engineering graduates. The Robotics Club of Kongu Engineering College strives 
+        to inspire interest in robotics among the students of our institution. Besides making a solemn endeavor 
+        to spread the knowledge on Robotics and its diverse applications. It was initiated in the year of 2011; 
+        Motto of the club is to transfer the knowledge by the students for the students. The Club offers 
+        indispensable guidance, workshops and tutorials along with tools, equipment, components and workspace. 
+        The club members meet periodically to discuss over matters such as the management of the workspace, 
+        workshops, projects and competitions. We welcome anyone, with prior basic knowledge, who wishes to be a 
+        part of this club. There are no prerequisites to join because we have members that believe in the transfer 
+        of knowledge, especially that which concerns our valuable interest in Robotics. Our training modules give 
+        utmost importance to design and individual thinking. All our programs would involve brainstorming design 
+        sessions to give the students an opportunity to come up with their own solutions. Our kits have minimal 
+        pre-designed parts encouraging the students to apply their own designs while fabricating their 
+        robots.</div></Row>
+      <Row><div className="officebearers">Officebearers</div></Row>
+      <Row lg={3} md={2} >
         {
-          data.map((e)=><Officebearer data={e} options={edit} Edit={Edit} Delete={Delete}></Officebearer>)
+          data.map((e)=><Col><Officebearer data={e} options={edit} Edit={Edit} Delete={Delete}></Officebearer></Col>)
         } 
-      </div>
+      </Row>
       {(edit)&&<div>
-          <form onSubmit={handleSubmit}>
-            <input name="name" onChange={handleChange} value={Form.name} placeholder="Enter Name"></input>
-            <input name="photo"  type="file" onChange={handleChange} value={Form.photo} ></input>
-            <input name="posting" onChange={handleChange} value={Form.posting} placeholder="Enter posting"></input>
-            <input name="studyingYear" onChange={handleChange} value={Form.studyingYear} placeholder="Enter Studying year"></input>
+          <Form onSubmit={handleSubmit}>
+            <FloatingLabel controlId="floatingInput" label="Name" className="mb-3">
+              <Form.Control name="name" onChange={handleChange} value={FormData.name} placeholder="Name" />
+            </FloatingLabel>
             
-            <button type="submit">submit</button>
-          </form>     
+            <input name="photo"  type="file" onChange={handleChange} value={FormData.photo} ></input>
+            
+            <FloatingLabel controlId="floatingInput" label="Posting" className="mb-3">
+              <Form.Control name="posting" onChange={handleChange} value={FormData.posting} placeholder="Enter posting" />
+            </FloatingLabel>
+            <FloatingLabel controlId="floatingInput" label="Studying Year" className="mb-3">
+              <Form.Control name="studyingYear" onChange={handleChange} value={FormData.studyingYear} placeholder="Enter Studying year" />
+            </FloatingLabel>
+            <Button style={{background:"#08C6CF"}} type="submit">Submit</Button>
+            {/* <input name="name" onChange={handleChange} value={FormData.name} placeholder="Enter Name"></input>
+            <input name="photo"  type="file" onChange={handleChange} value={FormData.photo} ></input>
+            <input name="posting" onChange={handleChange} value={FormData.posting} placeholder="Enter posting"></input>
+            <input name="studyingYear" onChange={handleChange} value={FormData.studyingYear} placeholder="Enter Studying year"></input>
+            
+            <button type="submit">submit</button> */}
+          </Form>     
         </div>}
-    </div>
+    </Container>
   )
 }

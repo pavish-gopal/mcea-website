@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Young+Serif&display=swap');
+
+
+.points{
+    font-family: 'Courier Prime', monospace;
+    padding-left: 12rem;
+    padding-right:6rem;
+    line-height: 2rem;
+}
+@media (max-width:399px){
+    .points{
+        font-family: 'Courier Prime', monospace;
+        padding-left: 0.6rem;
+        padding-right:0rem;
+        line-height: 2rem;
+        
+    }
+}
+@media (min-width:400px) and (max-width: 1000px) {
+    .points{
+        font-family: 'Courier Prime', monospace;
+        padding-left: 3rem;
+        padding-right:3rem;
+        line-height: 2rem;
+        
+    } 
+}
+@media (min-width:1000px) and (max-width: 1300px) {
+    .points{
+    font-family: 'Courier Prime', monospace;
+    padding-left: 9rem;
+    padding-right:6rem;
+    line-height: 2rem;
+}
+}
+
+
+
+
+
+
+.Titles{
+    font-family: 'Courier Prime', monospace;
+    font-size: 1.4rem;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding-top:1rem;
+    padding-bottom:1rem;
+}
+.student-coordinators{
+    font-family: 'Courier Prime', monospace;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.registeration-fees{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.header{
+    display:flex;
+    justify-content:right;
+    /* align-items:center; */
+}
+
+.event-name{
+    font-family: 'Courier Prime', monospace;
+    font-size: 1.3rem;
+    display: flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.buttons{
+    border-radius: 100px;
+    margin-left:10px;
+}

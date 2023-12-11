@@ -38,16 +38,17 @@ export const signUp=async(req,res)=>{
         const data=req.body;
         const username=data.UserName;
         const password=await bcrypt.hash(data.Password,12);//12 is the strength of the salt
-        const already_user_exits=await User.findOne({UserName:username});
-        if(already_user_exits){
-            res.status(200).json({data:"user already exists"});
+        let already_user_exits=await User.findOne({UserName:username});
+        if(already_user_exits!=null){
+            res.status(404).json({data:"user exists"});
         }
         else{
+            console.log("Created a new user")
             let user=await User.create({UserName:username,Password:password});
             await user.save();
             
             const token=jwt.sign({UserName:username},privateKey,{ expiresIn: '10d' });
-            res.status(200).json({data:token});
+            res.status(200).json({data:{token}});
         }
         
 

@@ -7,13 +7,16 @@ import {createStore, applyMiddleware,compose} from 'redux';
 import thunk from 'redux-thunk';
 //importing reducers
 import reducer from'./reducers';
+
 const store = createStore(reducer,compose(applyMiddleware(thunk)));
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      <App />
+      
+        <App style={{backgroundColor:'black'}}/>
+      
     </Provider>
     
   </React.StrictMode>

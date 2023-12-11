@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Young+Serif&display=swap');
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:2rem;
+}
+
+span{
+    font-family: 'Courier Prime', monospace;
+    color:#08c6db;
+    font-size: 3rem;
+    font-weight:bold;
+} 

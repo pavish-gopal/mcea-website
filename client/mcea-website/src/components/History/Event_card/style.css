@@ -1,0 +1,8 @@
+@media (min-width:400px) and (max-width: 747px) {
+    .wrapper{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+    } 
+}
