@@ -86,15 +86,17 @@
 .header{
     display:flex;
     justify-content:right;
+    
     /* align-items:center; */
 }
 
 .event-name{
     font-family: 'Courier Prime', monospace;
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     display: flex;
     justify-content:center;
     align-items:center;
+    font-weight: bold;
 }
 
 .buttons{
