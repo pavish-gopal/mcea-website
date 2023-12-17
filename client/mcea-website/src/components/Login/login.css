@@ -1,0 +1,8 @@
+@font-face {
+    font-family: 'heading';
+    src: url('../assets/Font/NEONLEDLight.otf');
+}
+
+.login{
+    font-family: 'heading';
+}

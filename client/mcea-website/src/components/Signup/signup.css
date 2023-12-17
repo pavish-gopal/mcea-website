@@ -1,0 +1,11 @@
+@font-face {
+    font-family: 'heading';
+    src: url('../assets/Font/NEONLEDLight.otf');
+}
+
+.signup_{
+    font-family: 'heading';
+    color:red;
+    font-size: 3rem;
+    margin-bottom: 3rem;
+}

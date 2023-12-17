@@ -106,14 +106,16 @@ useEffect(()=>{
           data.map((e)=><Col><Officebearer data={e} options={edit} Edit={Edit} Delete={Delete}></Officebearer></Col>)
         } 
       </Row>
-      {(edit)&&<div>
+      {(edit)&&<div style={{display:'flex',justifyContent:'center',alignItems:'center'}}>
           <Form onSubmit={handleSubmit}>
             <FloatingLabel controlId="floatingInput" label="Name" className="mb-3">
               <Form.Control name="name" onChange={handleChange} value={FormData.name} placeholder="Name" />
+            </FloatingLabel >
+
+            <FloatingLabel controlId="floatingInput" label="gdrive Link" className="mb-3">
+            <Form.Control name="photo" onChange={handleChange} value={FormData.photo} placeholder="Enter the link" />
             </FloatingLabel>
-            
-            <input name="photo"  type="file" onChange={handleChange} value={FormData.photo} ></input>
-            
+
             <FloatingLabel controlId="floatingInput" label="Posting" className="mb-3">
               <Form.Control name="posting" onChange={handleChange} value={FormData.posting} placeholder="Enter posting" />
             </FloatingLabel>

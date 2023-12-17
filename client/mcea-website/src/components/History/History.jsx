@@ -88,12 +88,16 @@ useEffect(()=>{
           data?.map((e)=>(<Col><Event_card data={e} options={edit} Edit={Edit} Delete={Delete}></Event_card></Col>))
         }
       </Row>
-      {(edit)&&<div>
+      {(edit)&&<div style={{display:'flex',justifyContent:'center',alignItems:'center'}}>
           <Form onSubmit={handleSubmit}>
+
             <FloatingLabel controlId="floatingInput" label="Event Name" className="mb-3">
               <Form.Control name="eventName" onChange={handleChange} value={FormData.eventName} placeholder="Enter Event Name" />
             </FloatingLabel>
-            <input name="eventImage"  type="file" onChange={handleChange} value={FormData.eventImage} ></input>
+            <FloatingLabel controlId="floatingInput" label="gdrive link" className="mb-3">
+              <Form.Control name="eventImage" onChange={handleChange} value={FormData.eventImage} placeholder="Enter Event Name" />
+            </FloatingLabel>
+            
             <FloatingLabel controlId="floatingInput" label="Event date" className="mb-3">
               <Form.Control name="EventDate" onChange={handleChange} value={FormData.EventDate} placeholder="Enter Event date" />
             </FloatingLabel>

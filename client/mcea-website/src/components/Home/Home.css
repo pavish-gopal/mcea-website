@@ -1,18 +1,33 @@
 @import url('https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Young+Serif&display=swap');
 
-  @import url('https://fonts.googleapis.com/css2?family=Young+Serif&display=swap');
+@font-face {
+    font-family:'KEC';
+    src: url('../assets/Font/varsity_regular.ttf');
+    font-weight: bold;
+}
 
-
+@font-face {
+    font-family: 'heading';
+    src: url('../assets/Font/NEONLEDLight.otf');
+}
+@font-face {
+    font-family:'nexus name';
+    src: url('../assets/Font/digital-7.ttf');
+    font-weight: bold;
+}
 .Home-college-name{
-    font-size:40px;
+    font-family:'KEC';
+    font-size:1rem;
 }
 .Home-eventName{
-    color:red;
+    font-family:'nexus name';
+    color:rgb(129, 245, 12);
 }
 .reg:hover{
     text-decoration: none;
-    color:rgb(12, 243, 243);
+    color:#FF0101;
     
     background-color:#fbfbfb;
     border-radius: 5px;
@@ -22,9 +37,10 @@
 {
     text-decoration: none;
     color:rgb(255, 255, 253);
-    background-color:#00E4FF;
+    background-color:#FF0101;
     border-radius: 5px;
     padding:10px;
+    font-family: 'Courier Prime', monospace;
     
 }
 
@@ -32,39 +48,104 @@
 .description{
     font-family: 'Courier Prime', monospace;
     color:#E3FDFD;
+    text-align: justify;
+    
+    line-height: 2.5;
+}
+.description1{
+    font-family: 'Courier Prime', monospace;
+    color:#E3FDFD;
+    
+    font-size: 1rem;
     line-height: 2.5;
 }
 
 .titles{
-    font-family: 'Young Serif', serif;
+    font-family: 'heading';
     font-size: 2rem;
-    color:#00E4FF;
+    color:#FF0101;
 }
 
-.Home-college-name{
-    font-family: 'Young Serif', serif;
-    font-size: 1.5rem;
-    color:#00E4FF;
-}
+
 .Home-eventName{
-    font-family: 'Young Serif', serif;
+   
     font-size: 3rem;
     margin-top:5%;
     
 }
 .Home-eventDate{
-    font-family: 'Young Serif', serif;
-    font-size: 3rem;
+    font-family: 'Courier Prime', monospace;
+    font-size: 1rem;
     margin-top:5%;
+    color:white;
+    font-weight: bold;
 }
 .Home-cashPrice{
-    font-family: 'Young Serif', serif;
-    font-size: 3rem;
+    font-family: 'Courier Prime', monospace;
+    font-size: 1.2rem;
     margin-top:5%;
+    color:rgb(255, 255, 255);
+    font-weight: bold;
 }
 
 .Home-lastDateToRegister{
-    font-family: 'Young Serif', serif;
-    font-size: 3rem;
+    font-family: 'Courier Prime', monospace;
+    font-size: 1rem;
     margin-top:5%;
+    color:white;
+}
+
+.mission-left{
+    display: flex;
+}
+
+@media screen and (min-width:315px) and (max-width:767px){
+    .mission-left{
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    .Home-slider{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .Home-lastDateToRegister{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .Home-college-name{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .Home-eventName{
+        display: flex;
+        justify-content: center;
+        align-items: center;    
+    }
+    .Home-eventDate{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .Home-cashPrice{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .home-button-wrapper{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media only screen and (max-width:355px){
+    .Home-lastDateToRegister{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size:12px;
+    }
 }

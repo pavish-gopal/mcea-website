@@ -1,3 +1,148 @@
 .navs{
     color:#00E4FF;
 }
+.navbar-wrapper{
+    display:flex;
+    flex-direction: row;
+    height:10vh;
+    align-items: center
+}
+.mcea-logo{
+    width:10%;
+    position:absolute;
+    left:0;
+    margin-top:35px;
+    margin-left: 10px;
+}
+
+.kec-logo{
+    width:10%;
+    position:absolute;
+    right:0;
+    margin-top:35px;
+    margin-right: 10px;
+}
+.navbar_toggle{
+    display:none;
+    
+}
+
+.line{
+    background-color: white;
+    width:15px;
+    height:2px;
+}
+.navbar_sliding{
+    display: none;
+}
+.navbar_main{
+    
+    position:absolute;
+    display: flex;
+    /* margin-top:3rem; */
+    /* margin-bottom:10vh ; */
+    left:46vw;
+    justify-content: center;
+    gap:2rem;
+    
+
+}
+
+.lk{
+    text-decoration: none;
+}
+
+@media only screen and (max-width: 768px) {
+    .navbar_toggle{
+        position: relative;
+        margin-top:2.2rem;
+        
+        left:80vw;
+        display: flex;
+        flex-direction: column;
+        
+        align-items: center;
+        gap:3px;
+    }
+    
+    .navbar_main{
+        display: none;
+    }
+    .navbar_sliding{
+        margin-top: 0%;
+        position:fixed;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        z-index: 3;
+        background-color:rgba(24, 23, 23, 0.977);
+        top: 0;
+        left: 0;
+        height: 110vh;
+        width: 9rem; 
+        border-radius: 4px;
+        gap:1rem;
+        
+    }
+    
+
+}
+
+.link{
+    display:flex;
+    justify-content:center;
+    align-items: center;
+    background-color: transparent;
+    color:rgb(228, 239, 221);
+    border-bottom:2px solid #e50a06;
+    
+    
+    height: 2px;
+    text-decoration: none;
+    height: 100% ;
+    max-height: 30px;
+     margin-top:10px;
+     width: 90%;
+
+}
+/* @media screen and (min-width:425) and(max-width: 768px){
+    .navbar_toggle{
+        display: none;
+    }
+} */
+@media only screen and (min-width:1078px){
+    .kec-logo{
+        width:8%;
+        position:absolute;
+        right:0;
+        margin-top:55px;
+        margin-right: 10px;
+    }
+    .mcea-logo{
+        width:7%;
+        
+        position:absolute;
+        left:0;
+        margin-top:55px;
+        margin-left: 30px;
+    }
+}
+
+@media only screen and (min-width:315px) and (max-width:500px){
+    .mcea-logo{
+        width:16%;
+        position:absolute;
+        left:0;
+        margin-top:35px;
+        margin-left: 10px;
+    }
+}
+@media only screen and (min-width:501px) and (max-width:768px){
+    .mcea-logo{
+        width:12%;
+        position:absolute;
+        left:0;
+        margin-top:35px;
+        margin-left: 10px;
+    }
+}

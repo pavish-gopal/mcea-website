@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Young+Serif&display=swap');
 .wrapper{
     display: flex;
     flex-direction: column;
@@ -6,10 +5,13 @@
     align-items: center;
     gap:2rem;
 }
-
+@font-face {
+    font-family:'heading';
+    src: url('../assets/Font/NEONLEDLight.otf');
+}
 span{
-    font-family: 'Courier Prime', monospace;
-    color:#08c6db;
+    font-family:'heading';
+    color:#eb1400;
     font-size: 3rem;
     font-weight:bold;
 } 

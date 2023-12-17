@@ -110,11 +110,11 @@ const handleSubmit=(e)=>{
         }</Carousel>
 
         {(edit)&&<Container>
-          <Form onSubmit={handleSubmit}>
+          <Form  onSubmit={handleSubmit}>
             <FloatingLabel controlId="floatingInput" label="Event Name" className="mb-3">
               <Form.Control name="eventName" onChange={handleChange} value={FormData.eventName} placeholder="Enter Event Name" />
             </FloatingLabel>
-            <input name="eventImage"  type="file" onChange={handleChange} value={FormData.eventImage} ></input>
+            {/* <input name="eventImage"  type="file" onChange={handleChange} value={FormData.eventImage} ></input> */}
             <FloatingLabel controlId="floatingInput" label="Enter rules" className="mb-3">
               <Form.Control name="rules" onChange={handleChange} value={FormData.rules} placeholder="Enter rules" />
             </FloatingLabel>

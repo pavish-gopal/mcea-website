@@ -1,0 +1,36 @@
+@font-face {
+    font-family: 'heading';
+    src: url('../assets/Font/NEONLEDLight.otf');
+}
+
+.staffcoordinators{
+    margin-top:10px;
+    font-family:'heading';
+    font-size: 15px;
+    font-weight:bold;
+    color:red;
+}
+.studentcoordinators{
+    margin-top:10px;
+    font-family:'heading';
+    font-size: 15px;
+    font-weight:bold;
+    color:red;
+}
+
+.contacts-wrapper{
+    display: flex;
+    margin-top:2.5rem;
+    margin-bottom:2rem;
+    border-radius: 10px;
+    
+}
+@media screen and (min-width:315px) and (max-width:767px){
+    .contacts-wrapper{
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content:center;
+        
+    }
+}

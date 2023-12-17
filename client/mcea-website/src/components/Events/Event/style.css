@@ -2,12 +2,32 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Young+Serif&display=swap');
 
+.reg:hover{
+    text-decoration: none;
+    color:#FF0101;
+    border-color: transparent;
+    background-color:#fbfbfb;
+    border-radius: 5px;
+    padding:10px;
+}
+.reg
+{
+    font-family: 'Courier Prime', monospace;
+    border-color: transparent;
+    text-decoration: none;
+    color:rgb(255, 255, 253);
+    background-color:#FF0101;
+    border-radius: 5px;
+    padding:10px;
+    
+}
 
 .points{
     font-family: 'Courier Prime', monospace;
     padding-left: 12rem;
     padding-right:6rem;
     line-height: 2rem;
+    text-align: justify;
 }
 @media (max-width:399px){
     .points{

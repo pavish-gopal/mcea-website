@@ -1,14 +1,16 @@
 
 
-@import url('https://fonts.googleapis.com/css2?family=Young+Serif&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap');
+@font-face {
+    font-family: 'heading';
+    src: url('../assets/Font/NEONLEDLight.otf');
+}
 
 .head-history{
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: 'Courier Prime', monospace;
-    color:#08c6db;
+    font-family: 'heading';
+    color: #f40606;;
     font-size: 3rem;
     font-weight:bold;
 }

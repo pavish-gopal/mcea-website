@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap');
+@font-face {
+    font-family: 'KEC1';
+    src: url('../assets/Font/NEONLEDLight.otf');
+}
+@font-face {
+    font-family: 'name';
+    src: url('../assets/Font/Vampire\ Wars\ Italic.ttf');
+}
+.credits-contact-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap:1rem;
+}
+
+.links-c{
+    text-decoration: none;
+    display: flex;
+    
+    justify-content: center;
+    
+    align-items: center;
+    flex-direction: row;
+    
+}
+
+.details{
+    font-family: 'Courier Prime', monospace;
+    color:white;
+    margin-left:10px;
+    
+}
+
+.ig{
+    width:30px;
+    
+}
+.ctr{
+    height:70vh;
+}
+
+.dev-details{
+    color:rgb(255, 255, 255);
+    font-weight: bold;
+    font-size: 1.7rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'KEC1';
+}
+.dev-name{
+    color:rgb(255, 0, 0);
+    font-weight: bold;
+    font-family: 'name';
+    font-size: 1.2rem;
+}

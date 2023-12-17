@@ -1,12 +1,14 @@
 import React,{useState} from 'react'
 import { signup } from '../../actions/user.js';
 import {useDispatch} from 'react-redux';
-
+import { useNavigate } from 'react-router-dom';
+import './signup.css';
 //bootstraps
 import { Container,Row,Col,Form,FloatingLabel,Button } from 'react-bootstrap';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 export default function Signup() {
+    const navigate=useNavigate();
     const dispatch=useDispatch();
     let [data,setData]=useState({UserName:"",Password:""});
     
@@ -28,12 +30,13 @@ export default function Signup() {
     }
     const handleSubmit=(e)=>{
         e.preventDefault();
-        dispatch(signup(data));
+        dispatch(signup(data,navigate));
         setData({UserName:"",Password:""});
     }
   return (
     
-    <div style={{display:'flex',alignItems:'center',justifyContent:'center',borderRadius:'10px',padding:'40px'}}>
+    <div style={{display:'flex',flexDirection:'column',alignItems:'center',justifyContent:'center',borderRadius:'10px',padding:'40px'}}>
+        <div className="signup_">Signup</div>
         <Form onSubmit={handleSubmit} style={{display:'flex',flexDirection:'column'}}>
             <FloatingLabel controlId="floatingInput" label="UserName" className="mb-3">
               <Form.Control name="UserName" onChange={handleChange} value={data.UserName} placeholder="UserName" />

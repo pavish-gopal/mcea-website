@@ -198,7 +198,8 @@ const particlesConfig={
       }
     },
     "color": {
-      "value": "#00E4FF",
+      "value": "#878080",
+      // "value": "#FF0404",
       "animation": {
         "h": {
           "count": 0,
@@ -507,13 +508,13 @@ const particlesConfig={
     "links": {
       "blink": false,
       "color": {
-        "value": "#00E4FF"
+        "value": "#FF0101"
       },
       "consent": false,
       "distance": 150,
       "enable": true,
       "frequency": 1,
-      "opacity": 0.8,
+      "opacity": 1.9,
       "shadow": {
         "blur": 5,
         "color": {

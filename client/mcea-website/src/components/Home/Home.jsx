@@ -4,8 +4,12 @@ import {useSelector,useDispatch} from 'react-redux';
 import { TypeAnimation } from 'react-type-animation';
 import {get_home,post_home} from '../../actions/home.js';
 import { Link } from 'react-router-dom';
-import gif2 from '../../img/gif2.gif';
-// import Robot1 from '../robotcomponents/Robot1/Robot1.jsx';
+//gifs importing
+import gif0 from '../assets/Gifs/isometric-automatic-production-of-products.gif';
+import gif1 from '../assets/Gifs/taxi-53.gif';
+import gif2 from '../assets/Gifs/handy-machine-learning.gif';
+import gif3 from '../assets/Gifs/kingdom-business-chart-overlook.gif';
+import gif4 from '../assets/Gifs/gif4.gif';
 //css importing
 import './Home.css';
 
@@ -64,31 +68,31 @@ export default function Home() {
   return (
       
       <Container>
-      <Row >
-        <Col md>
-          <div>left</div>
+      <Row style={{marginTop:'6%'}}>
+        <Col style={{display:'flex',flexDirection:'center',alignItems:'center'}} md>
+          <img style={{width:'90%'}} src={gif0}></img>
         </Col>
         <Col md><div>
         {(data.length > 0)? 
         <Container>
-          <div style={{color:'#00E4FF'}} className="Home-college-name">Kongu Engineering College</div>
+          <div style={{color:'#FF0101'}} className="Home-college-name">KONGU ENGINEERING COLLEGE</div>
           <div  className="Home-eventName">{(data[0]?.eventName)}</div>  
-          <div>{
+          <div className="Home-slider">{
             <TypeAnimation
                  sequence={data[0]?.slider}
-                 speed={10}
+                 speed={9}
 
                  repeat={Infinity}
-                 style={{ fontSize: '2rem',color:'#E3FDFD'}}
+                 style={{ fontSize: '1rem',color:'red',fontWeight:'bold'}}
                />
             
              }</div>          
-          <div style={{color:'#E3FDFD',fontSize:'1.2rem',marginTop:'2%'}} className="Home-eventDate">Event Date {data[0]?.eventDate}</div>            
+          <div  className="Home-eventDate">{data[0]?.eventDate}</div>            
           
-          <div style={{color:'#E3FDFD',fontSize:'1.2rem',marginTop:'2%'}} className="Home-cashPrice">Cash prize upto {data[0]?.cashPrize}</div>
+          <div  className="Home-cashPrice">Cash prize upto {data[0]?.cashPrize}</div>
 
-             <div style={{marginTop:'5%'}}><Link className="reg" to="/events">Register Soon</Link></div>
-             <div style={{color:'#E3FDFD',fontSize:'1.2rem',marginTop:'5%'}} className="Home-lastDateToRegister">Last date to Register {data[0]?.lastDateToRegister}</div>
+             <div className="home-button-wrapper" style={{marginTop:'5%'}}><Link className="reg" to="/events">Register Soon</Link></div>
+             <div  className="Home-lastDateToRegister">Last date to Register {data[0]?.lastDateToRegister}</div>
         </Container>:
         <>
         
@@ -97,8 +101,8 @@ export default function Home() {
       </Row>
       
       {/* {input for form} */}
-      {(edit)&&<div >
-          <Form onSubmit={handleSubmit}>
+      {(edit)&&<div style={{display:'flex',justifyContent:'center',alignItems:'center'}}>
+          <Form  onSubmit={handleSubmit}>
             <FloatingLabel controlId="floatingInput" label="Event Name" className="mb-3">
               <Form.Control name="eventName" onChange={handleChange} value={FormData.eventName} placeholder="Enter Event Name" />
             </FloatingLabel>
@@ -118,18 +122,18 @@ export default function Home() {
           
       </div>}
       <div className="lower-part">
-          <Row style={{marginTop:'4%'}}>
-              <Col style={{padding:"2rem"}} md classname="about-left"><img src={gif2}></img></Col>
+          <Row style={{marginTop:'6%'}}>
+              <Col style={{padding:"2rem",display:'flex',justifyContent:'center',alignItems:'center'}} md classname="about-left"><img style={{width:'15rem'}} src={gif1}></img></Col>
               <Col style={{padding:"2rem"}} md className="about-right">
                 <div className="titles" >Proudly presented by</div>
-                <div className="description">MECHATRONICS ENGINEERING ASSOCIATION</div>
+                <div className="description1">MECHATRONICS ENGINEERING ASSOCIATION</div>
                 <div className="description">"FOR THE STUDENTS BY THE STUDENTS"</div>
               </Col>
               
           </Row>
 
           <Row style={{marginTop:'4%'}}>
-              <Col style={{padding:"2rem"}} md classname="objectives-left">left</Col>
+              <Col style={{padding:"2rem",display:'flex',justifyContent:'center',alignItems:'center'}} md classname="objectives-left"><img src={gif2} style={{width:'15rem'}}></img></Col>
               <Col style={{padding:"2rem"}}  md className="objectives-right">
                 <div className="titles">OBJECTIVES</div>
                 <div className="description">“To transform our culture by creating a world where 
@@ -140,23 +144,24 @@ export default function Home() {
               
           </Row>
 
-          <Row style={{marginTop:'4%'}}>
-              <Col style={{padding:"2rem"}} md classname="mission-left">
+          <div><Row className="mission-left">
+              <Col style={{padding:"2rem"}} md >
                 <div className="titles">MISSION</div>
                 <div className="description">Our mission is to inspire young people to be science and technology leaders, 
                   by engaging them in exciting mentor-based programs that build science, engineering and technology skills, 
                   that inspire innovation, and that foster 
                   well-rounded life capabilities including self-confidence, communication, and leadership.</div>
               </Col>
-              <Col style={{padding:"2rem"}} md className="mission-right">
-                right
+              <Col style={{padding:"2rem",display:'flex',justifyContent:'center',alignItems:'center'}} md className="mission-right">
+                <img style={{width:'15rem'}} src={gif3}></img>
                 
               </Col>
               
-          </Row>
+              
+          </Row></div>
 
           <Row style={{marginTop:'4%'}}>
-              <Col style={{padding:"2rem"}} md classname="vision-left">left</Col>
+              <Col style={{padding:"2rem",display:'flex',justifyContent:'center',alignItems:'center'}} md classname="vision-left"><img style={{width:'15rem'}} src={gif4}></img></Col>
               <Col style={{padding:"2rem"}} md className="vision-right">
                 <div className="titles">VISION</div>
                 <div className="description">To become the greatest Robotics team in the South Zone and an annual 

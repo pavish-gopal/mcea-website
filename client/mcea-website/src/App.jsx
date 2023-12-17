@@ -14,6 +14,8 @@ import Signup from "./components/Signup/Signup.jsx";
 import Navbar1 from "./components/Navbar/Navbar";
 import ParticleBackground from "./particles/particle-baground/ParticlesBaground";
 import Contacts from "./components/contacts/Contacts";
+import Credits from "./components/Credits/Credits.jsx";
+import CreditsContact from "./components/CreditsContact/CreditsContact.jsx";
 
 function App() {
   
@@ -28,8 +30,10 @@ function App() {
           <Route path="/about" element={<About/>}></Route>
           <Route path="/events" element={<Events/>}></Route>
           <Route path="/history" element={<History/>}></Route>
+          <Route path="/dev" element={<CreditsContact></CreditsContact>}></Route>
       </Routes> 
       <Contacts></Contacts>
+      <Credits></Credits>
     </BrowserRouter>
   );
 }
