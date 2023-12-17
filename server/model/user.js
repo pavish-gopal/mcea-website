@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+const mongoose =require( "mongoose");
 
 let UserSchema=mongoose.Schema({
         UserName:String,
@@ -6,4 +6,4 @@ let UserSchema=mongoose.Schema({
 });
     
 const User=mongoose.model('User',UserSchema);
-export default User;
+module.exports= User;

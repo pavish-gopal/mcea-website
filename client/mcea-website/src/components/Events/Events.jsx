@@ -99,7 +99,7 @@ const handleSubmit=(e)=>{
   return (
     <div className="wrapper">
       <span classname="eve">Events</span>
-      <Carousel>
+      <Carousel touch={false}>
         {
         data.map((e)=>(
           <Carousel.Item >

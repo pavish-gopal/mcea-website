@@ -28,12 +28,12 @@ const particlesConfig={
   },
   "detectRetina": true,
   "duration": 0,
-  "fpsLimit": 120,
+  "fpsLimit": 30,
   "interactivity": {
     "detectsOn": "window",
     "events": {
       "onClick": {
-        "enable": true,
+        "enable": false,
         "mode": "push"
       },
       "onDiv": {

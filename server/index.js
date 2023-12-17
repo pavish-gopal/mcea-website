@@ -1,15 +1,14 @@
-import express from "express";
-import cors from "cors";
-import mongoose from "mongoose";
-import bodyParser from "body-parser";
+const express=require('express');
+const cors=require("cors");
+const mongoose=require("mongoose");
 
 //importing routes
-import home from './routes/home.js'; 
-import events from './routes/events.js';
-import about from './routes/about.js';
-import history from './routes/history.js';
-import contacts from './routes/contacts.js';
-import user from './routes/user.js';
+const home =require('./routes/home.js'); 
+const events=require('./routes/events.js');
+const about=require('./routes/about.js');
+const history =require('./routes/history.js');
+const contacts=require('./routes/contacts.js');
+const user =require('./routes/user.js');
 let app=express();
 app.use(express.json());
 //middleware configuration
@@ -19,9 +18,10 @@ app.use(cors());
 
 let PORT=5000;
 // let URL="mongodb+srv://whitedevil:0pM8ysT3HmMh5KyZ@cluster0.mtzjakd.mongodb.net/?retryWrites=true&w=majority";
-let URL='mongodb://127.0.0.1:27017/mcea';
+// let URL='mongodb://127.0.0.1:27017/mcea';
+ let URL="mongodb+srv://praneash4:9mCLYcruQX4drxgS@cluster0.wg2zzss.mongodb.net/?retryWrites=true&w=majority";
 
-await mongoose.connect(URL, {
+ mongoose.connect(URL, {
     useNewUrlParser: true,
     useUnifiedTopology: true
   }).then(app.listen(PORT,()=>{

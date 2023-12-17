@@ -1,7 +1,7 @@
-import Home from '../model/home.js';
-import mongoose from 'mongoose';
+const Home =require( '../model/home.js');
+const mongoose =require('mongoose');
 
-export const getHome =async (req,res)=>{
+const getHome =async (req,res)=>{
     try{
         
         let home=await Home.find();
@@ -13,7 +13,7 @@ export const getHome =async (req,res)=>{
     }
 }
 
-export const postHome=async(req,res)=>{
+const postHome=async(req,res)=>{
     try{
         let data=req.body;
         let home=await Home.find();
@@ -39,7 +39,7 @@ export const postHome=async(req,res)=>{
     }
 }
 
-export const putHome=async(req,res)=>{
+ const putHome=async(req,res)=>{
     try{
         let newData=req.body;
         
@@ -52,7 +52,7 @@ export const putHome=async(req,res)=>{
     }
 }
 
-export const deleteHome=async(req,res)=>{
+ const deleteHome=async(req,res)=>{
     try{
         await Home.deleteMany({});
     
@@ -61,4 +61,11 @@ export const deleteHome=async(req,res)=>{
     catch(error){
         res.status(404).send(error.message);
     }
+}
+
+module.exports={
+    getHome,
+    postHome,
+    putHome,
+    deleteHome,
 }

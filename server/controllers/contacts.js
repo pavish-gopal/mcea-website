@@ -1,7 +1,7 @@
-import Contact from '../model/contact.js';
-import mongoose from 'mongoose';
+const Contact =require ('../model/contact.js');
+const mongoose =require('mongoose');
 
-export const getContacts =async (req,res)=>{
+ const getContacts =async (req,res)=>{
     try{
         let contacts=await Contact.find(); 
         
@@ -12,7 +12,7 @@ export const getContacts =async (req,res)=>{
     }
 }
 
-export const postContacts=async(req,res)=>{
+ const postContacts=async(req,res)=>{
     try{
         let data=req.body;
         let contacts=await Contact.find();
@@ -38,7 +38,7 @@ export const postContacts=async(req,res)=>{
     }
 }
 
-export const putContacts=async(req,res)=>{
+ const putContacts=async(req,res)=>{
     try{
         let newData=req.body;
         
@@ -51,7 +51,7 @@ export const putContacts=async(req,res)=>{
     }
 }
 
-export const deleteContacts=async(req,res)=>{
+ const deleteContacts=async(req,res)=>{
     try{
         await Contact.deleteMany({});
     
@@ -60,4 +60,11 @@ export const deleteContacts=async(req,res)=>{
     catch(error){
         res.status(404).send(error.message);
     }
+}
+
+module.exports={
+    getContacts,
+    postContacts,
+    putContacts,
+    deleteContacts,
 }

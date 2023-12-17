@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+const mongoose =require( "mongoose");
 
 let officeBearersSchema=mongoose.Schema({
     name:String,
@@ -9,4 +9,4 @@ let officeBearersSchema=mongoose.Schema({
 });
 
 const OfficeBearers=mongoose.model('OfficeBearers',officeBearersSchema);
-export default OfficeBearers;
+module.exports= OfficeBearers;

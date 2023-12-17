@@ -1,7 +1,7 @@
-import mongoose from "mongoose";
-import Events from "../model/events.js";
+const mongoose =require("mongoose");
+const Events =require("../model/events.js");
 
-export const getEvents=async(req,res)=>{
+ const getEvents=async(req,res)=>{
     try{
         const data=await Events.find();
         res.status(200).json(data);
@@ -11,7 +11,7 @@ export const getEvents=async(req,res)=>{
     }
 }
 
-export const postEvents=async(req,res)=>{
+ const postEvents=async(req,res)=>{
     try{
         let data=req.body;
         let newEvent=await Events.create(data);
@@ -25,7 +25,7 @@ export const postEvents=async(req,res)=>{
     }
 }
 
-export const putEvents=async(req,res)=>{
+ const putEvents=async(req,res)=>{
     try{
         let newData=req.body;
         let _id=req.params.id;
@@ -47,7 +47,7 @@ export const putEvents=async(req,res)=>{
     }
 }
 
-export const deleteEvents=async(req,res)=>{
+ const deleteEvents=async(req,res)=>{
     try{
         let _id=req.params.id;
         const isValid = mongoose.Types.ObjectId.isValid(_id);
@@ -65,4 +65,10 @@ export const deleteEvents=async(req,res)=>{
     catch(error){
         res.status(404).send(error.message);
     }
+}
+module.exports={
+    getEvents,
+    postEvents,
+    putEvents,
+    deleteEvents,
 }

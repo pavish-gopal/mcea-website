@@ -1,5 +1,5 @@
 import ReactDOM from "react-dom/client";
-
+import {Helmet} from "react-helmet";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import './App.css';
@@ -21,6 +21,12 @@ function App() {
   
   return (
     <BrowserRouter>
+          <Helmet>
+                <meta charSet="utf-8" />
+                <title>MCEA</title>
+                <link rel="canonical" href="https://mceakec-41355.web.app/" />
+                <meta name="description" content="mechatonics engineering association kongu engineering college" />
+            </Helmet>
       <Navbar1></Navbar1>
       <ParticleBackground > </ParticleBackground>
       <Routes>

@@ -35,7 +35,7 @@ export default function Signup() {
     }
   return (
     
-    <div style={{display:'flex',flexDirection:'column',alignItems:'center',justifyContent:'center',borderRadius:'10px',padding:'40px'}}>
+    <div style={{display:'flex',flexDirection:'column',alignItems:'center',justifyContent:'center',borderRadius:'10px',padding:'40px',marginBottom:'40vh'}}>
         <div className="signup_">Signup</div>
         <Form onSubmit={handleSubmit} style={{display:'flex',flexDirection:'column'}}>
             <FloatingLabel controlId="floatingInput" label="UserName" className="mb-3">

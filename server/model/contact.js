@@ -1,5 +1,5 @@
 
-import mongoose from "mongoose";
+const mongoose =require( "mongoose");
 
 let contactSchema=mongoose.Schema({
         staffCordinators:[String], 
@@ -10,4 +10,4 @@ let contactSchema=mongoose.Schema({
 });
     
 const Contact=mongoose.model('Contact',contactSchema);
-export default Contact;
+module.exports= Contact;

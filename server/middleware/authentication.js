@@ -1,6 +1,6 @@
-import jwt from 'jsonwebtoken';
+const jwt =require('jsonwebtoken');
 const privateKey="mcea_website"
-export function authentication(req,res,next){
+ function authentication(req,res,next){
     try{
         
         let token=req?.headers?.authorization?.split(" ")[1];
@@ -11,4 +11,7 @@ export function authentication(req,res,next){
     catch(error){
       console.log(error.message);  
     }
+}
+module.exports={
+  authentication,
 }

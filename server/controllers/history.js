@@ -1,7 +1,7 @@
-import mongoose from "mongoose";
-import History from "../model/history.js";
+const mongoose =require("mongoose");
+const History =require("../model/history.js");
 
-export const getHistory=async(req,res)=>{
+ const getHistory=async(req,res)=>{
     try{
         const data=await History.find();
         res.status(200).json(data);
@@ -11,7 +11,7 @@ export const getHistory=async(req,res)=>{
     }
 }
 
-export const postHistory=async(req,res)=>{
+ const postHistory=async(req,res)=>{
     try{
         let data=req.body;
         
@@ -26,7 +26,7 @@ export const postHistory=async(req,res)=>{
     }
 }
 
-export const putHistory=async(req,res)=>{
+ const putHistory=async(req,res)=>{
     try{
         let newData=req.body;
         let _id=req.params.id;
@@ -47,7 +47,7 @@ export const putHistory=async(req,res)=>{
     }
 }
 
-export const deleteHistory=async(req,res)=>{
+ const deleteHistory=async(req,res)=>{
     try{
         let _id=req.params.id;
         const isValid = mongoose.Types.ObjectId.isValid(_id);
@@ -64,4 +64,12 @@ export const deleteHistory=async(req,res)=>{
     catch(error){
         res.status(404).send(error.message);
     }
+}
+
+module.exports={
+    getHistory,
+    postHistory,
+    putHistory,
+    deleteHistory
+
 }

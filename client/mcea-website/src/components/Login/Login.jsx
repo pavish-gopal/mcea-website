@@ -34,7 +34,7 @@ export default function Login() {
         setData({username:"",password:""});
     }
   return (
-    <div style={{display:'flex',flexDirection:'column',alignItems:'center',justifyContent:'center',borderRadius:'10px',padding:'40px'}}>
+    <div style={{display:'flex',flexDirection:'column',alignItems:'center',justifyContent:'center',borderRadius:'10px',padding:'40px',marginBottom:'40vh'}}>
         <div className="login" style={{color:'red',fontSize:'4rem'}}>Login</div>
         <Form onSubmit={handleSubmit} style={{display:'flex',flexDirection:'column'}}>
             <FloatingLabel controlId="floatingInput" label="UserName" className="mb-3">

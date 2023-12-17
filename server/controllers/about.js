@@ -1,7 +1,7 @@
-import mongoose from "mongoose";
-import OfficeBearers from "../model/officeBearers.js";
+const mongoose =require("mongoose");
+const OfficeBearers =require("../model/officeBearers.js");
 
-export const getOfficeBearers=async(req,res)=>{
+ const getOfficeBearers=async(req,res)=>{
     try{
         const data=await OfficeBearers.find();
         res.status(200).json(data);
@@ -11,7 +11,7 @@ export const getOfficeBearers=async(req,res)=>{
     }
 }
 
-export const postOfficeBearers=async(req,res)=>{
+ const postOfficeBearers=async(req,res)=>{
     try{
         let data=req.body;
         let newofficeBearers=await OfficeBearers.create(data);
@@ -25,7 +25,7 @@ export const postOfficeBearers=async(req,res)=>{
     }
 }
 
-export const putOfficeBearers=async(req,res)=>{
+ const putOfficeBearers=async(req,res)=>{
     try{
         let newData=req.body;
         let _id=req.params.id;
@@ -46,7 +46,7 @@ export const putOfficeBearers=async(req,res)=>{
     }
 }
 
-export const deleteOfficeBearers=async(req,res)=>{
+ const deleteOfficeBearers=async(req,res)=>{
     try{
         let _id=req.params.id;
         const isValid = mongoose.Types.ObjectId.isValid(_id);
@@ -63,4 +63,8 @@ export const deleteOfficeBearers=async(req,res)=>{
     catch(error){
         res.status(404).send(error.message);
     }
+}
+
+module.exports={
+    getOfficeBearers,postOfficeBearers,putOfficeBearers,deleteOfficeBearers,
 }

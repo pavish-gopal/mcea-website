@@ -1,10 +1,10 @@
-import express from "express";
-import { authentication } from "../middleware/authentication.js";
-import {getHistory, postHistory,putHistory,deleteHistory} from '../controllers/history.js';
+const express =require( "express");
+const { authentication } =require( "../middleware/authentication.js");
+const {getHistory, postHistory,putHistory,deleteHistory}=require( '../controllers/history.js');
 const router=express.Router();
 
 router.get('/',getHistory);
 router.post('/',authentication,postHistory);
 router.put('/:id',authentication,putHistory);
 router.delete('/:id',authentication,deleteHistory);
-export default router;
+module.exports = router;

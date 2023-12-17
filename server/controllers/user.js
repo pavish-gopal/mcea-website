@@ -1,9 +1,9 @@
-import User from '../model/user.js';
-import mongoose from 'mongoose';
-import bcrypt from 'bcrypt';
-import jwt from 'jsonwebtoken';
+const User =require('../model/user.js');
+const mongoose =require('mongoose');
+const bcrypt =require('bcrypt');
+const jwt =require('jsonwebtoken');
 const privateKey="mcea_website"
-export const login=async(req,res)=>{
+const login=async(req,res)=>{
     try{
         const data=req.params;
         
@@ -33,7 +33,7 @@ export const login=async(req,res)=>{
     }
 }
 
-export const signUp=async(req,res)=>{
+const signUp=async(req,res)=>{
     try{
         const data=req.body;
         const username=data.UserName;
@@ -58,7 +58,7 @@ export const signUp=async(req,res)=>{
     }
 }
 
-export const changePassword=async(req,res)=>{
+const changePassword=async(req,res)=>{
     try{
         const data=req.body;
         const username=data.UserName;
@@ -77,4 +77,8 @@ export const changePassword=async(req,res)=>{
     catch(error){
         console.log(error.message);
     }
+}
+
+module.exports={
+    login,signUp,changePassword,
 }

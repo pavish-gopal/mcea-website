@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+const mongoose =require( "mongoose");
 
 let homeSchema=mongoose.Schema({
     eventName:String,
@@ -11,4 +11,4 @@ let homeSchema=mongoose.Schema({
 });
 
 const Home=mongoose.model('Home',homeSchema);
-export default Home;
+module.exports= Home;

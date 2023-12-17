@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+const mongoose =require( "mongoose");
 
 const historySchema=mongoose.Schema({
     eventName:String,
@@ -9,4 +9,4 @@ const historySchema=mongoose.Schema({
 });
 
 const History=mongoose.model('History',historySchema);
-export default History;
+module.exports= History;
