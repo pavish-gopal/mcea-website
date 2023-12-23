@@ -99,10 +99,10 @@ const handleSubmit=(e)=>{
   return (
     <div className="wrapper">
       <span classname="eve">Events</span>
-      <Carousel touch={false}>
+      <Carousel touch={false} style={{backgroundColor:'rgba(177, 168, 168, 0.416)',borderRadius:'10px'}}>
         {
         data.map((e)=>(
-          <Carousel.Item >
+          <Carousel.Item interval={1000}>
             <Container><Event data={e} options={edit} Edit={Edit} Delete={Delete}> </Event></Container>
           </Carousel.Item>
         

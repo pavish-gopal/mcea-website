@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=Young+Serif&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Young+Serif&display=swap'); */
 
 @font-face {
     font-family:'KEC';
@@ -24,6 +24,8 @@
 .Home-eventName{
     font-family:'nexus name';
     color:rgb(129, 245, 12);
+    font-size: 3rem;
+    margin-top:5%;
 }
 .reg:hover{
     text-decoration: none;
@@ -67,12 +69,7 @@
 }
 
 
-.Home-eventName{
-   
-    font-size: 3rem;
-    margin-top:5%;
-    
-}
+
 .Home-eventDate{
     font-family: 'Courier Prime', monospace;
     font-size: 1rem;
@@ -93,6 +90,7 @@
     font-size: 1rem;
     margin-top:5%;
     color:white;
+    font-weight: bold;
 }
 
 .mission-left{

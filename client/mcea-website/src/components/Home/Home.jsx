@@ -78,13 +78,18 @@ export default function Home() {
           <div style={{color:'#FF0101'}} className="Home-college-name">KONGU ENGINEERING COLLEGE</div>
           <div  className="Home-eventName">{(data[0]?.eventName)}</div>  
           <div className="Home-slider">{
-            <TypeAnimation
-                 sequence={data[0]?.slider}
-                 speed={9}
+            (data[0].slider.length===1)?<div style={{ fontSize: '1rem',color:'red',fontWeight:'bold'}}>
+            {data[0].slider}
+            
+            
+          </div>:<TypeAnimation
+            sequence={data[0]?.slider}
+            speed={9}
 
-                 repeat={Infinity}
-                 style={{ fontSize: '1rem',color:'red',fontWeight:'bold'}}
-               />
+            repeat={Infinity}
+            style={{ fontSize: '1rem',color:'red',fontWeight:'bold'}}
+          />
+               
             
              }</div>          
           <div  className="Home-eventDate">{data[0]?.eventDate}</div>            
@@ -136,9 +141,10 @@ export default function Home() {
               <Col style={{padding:"2rem",display:'flex',justifyContent:'center',alignItems:'center'}} md classname="objectives-left"><img src={gif2} style={{width:'15rem'}}></img></Col>
               <Col style={{padding:"2rem"}}  md className="objectives-right">
                 <div className="titles">OBJECTIVES</div>
-                <div className="description">“To transform our culture by creating a world where 
-                  science and technology are celebrated and where young people dream of becoming science and
-                   technology leaders”</div>
+                <div className="description">Our association seeks to create a vibrant community where members can 
+                explore their passion for engineering through hands-on projects, workshops, and networking events. 
+                By fostering a collaborative and inclusive environment, we aim to inspire creativity, promote learning, 
+                and prepare members for success in their academic and professional pursuits.</div>
                 
               </Col>
               
@@ -147,10 +153,9 @@ export default function Home() {
           <div><Row className="mission-left">
               <Col style={{padding:"2rem"}} md >
                 <div className="titles">MISSION</div>
-                <div className="description">Our mission is to inspire young people to be science and technology leaders, 
-                  by engaging them in exciting mentor-based programs that build science, engineering and technology skills, 
-                  that inspire innovation, and that foster 
-                  well-rounded life capabilities including self-confidence, communication, and leadership.</div>
+                <div className="description">Committed to providing our members all the resources and chances necessary to succeed
+                 professionally and position them for roles of leadership in the field of engineering.
+                </div>
               </Col>
               <Col style={{padding:"2rem",display:'flex',justifyContent:'center',alignItems:'center'}} md className="mission-right">
                 <img style={{width:'15rem'}} src={gif3}></img>
@@ -164,11 +169,9 @@ export default function Home() {
               <Col style={{padding:"2rem",display:'flex',justifyContent:'center',alignItems:'center'}} md classname="vision-left"><img style={{width:'15rem'}} src={gif4}></img></Col>
               <Col style={{padding:"2rem"}} md className="vision-right">
                 <div className="titles">VISION</div>
-                <div className="description">To become the greatest Robotics team in the South Zone and an annual 
-                  competitor at the international level Robotics Competitions. Exemplifying the 
-                  importance of service through continual expansion in focus and scale of community 
-                  service projects within India. Acknowledging and addressing contemporary environmental issues
-                   through the adoption and innovation of new forms of clean building measures.</div>
+                <div className="description">Promoting a diverse and inclusive culture that feel empowered to 
+                express themselves , thus ensuring a wide variety of perspectives within the engineering community.
+              </div>
                 
               </Col>
               

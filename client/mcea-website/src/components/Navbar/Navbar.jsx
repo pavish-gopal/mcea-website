@@ -2,7 +2,8 @@ import React,{useState,useEffect} from 'react'
 import {Link} from 'react-router-dom';
 import { createBrowserHistory } from "history";
 import collegeLogo from '../../img/kecLogo.png';
-import mceaLogo from '../../img/mceaLogo.png';
+import mceaLogo from '../assets/Gifs/MCEA_LOGO.gif';
+import crossLogo from '../assets/Gifs/cross.png';
 
 import {logout} from '../../actions/user.js';
 import './styles.css';
@@ -48,12 +49,13 @@ export default function Navbar1() {
             {(Log)&&<Button onClick={Logout} >logout</Button>}
             </div> 
             
+            {(toggle===false)?<div onClick={handleToggle} className="navbar_toggle">
+              <div className="line"></div>
+              <div className="line"></div>
+              <div className="line"></div>
+            </div>:
+            <img src={crossLogo} className="navbar_cross" onClick={handleToggle} style={{width:"30px"}}></img>}
             
-            <div onClick={handleToggle} className="navbar_toggle">
-              <div className="line"></div>
-              <div className="line"></div>
-              <div className="line"></div>
-          </div>
           
           </div>
           
@@ -66,7 +68,8 @@ export default function Navbar1() {
           <img className="kec-logo" src={collegeLogo}></img>
           {(toggle)&&<div className="navbar_sliding">
             
-            <img style={{width:'40px',marginTop:'30px'}} src={mceaLogo} ></img>
+            <img style={{width:'40px',marginTop:'0px'}} src={mceaLogo} ></img>
+            
             <Link onClick={handleToggle} className="link" to='/' >Home</Link>
             <Link onClick={handleToggle} className="link" to='/events'>Events</Link>
             <Link onClick={handleToggle} className="link" to='/about'>About</Link>

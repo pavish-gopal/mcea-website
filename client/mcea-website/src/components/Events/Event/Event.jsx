@@ -13,7 +13,7 @@ export default function Event({data,options,Edit,Delete}) {
         
         <div>
         {(options)&&<div style={{display:'flex',justifyContent:'center'}} className="header"> <Button style={{background:"#08C6CF"}} className="buttons" onClick={()=>{Edit(data?._id)}}>edit</Button> <Button style={{background:"#08C6CF"}} className="buttons" onClick={()=>{Delete(data?._id)}}>delete</Button></div>}
-        <div style={{color:'white'}}className="event-name">{data?.eventName}</div>
+        <div style={{color:'white',marginTop:'1.4rem'}}className="event-name">{data?.eventName}</div>
         {/* <img href={data?.eventImage} alt="oops"></img> */}
         <h style={{color:'red'}}className="Titles">Rules</h>
         
