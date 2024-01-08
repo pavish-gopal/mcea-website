@@ -1,7 +1,8 @@
 const express=require('express');
 const cors=require("cors");
 const mongoose=require("mongoose");
-
+const dotenv = require("dotenv");
+dotenv.config({ path: "./.env" });
 //importing routes
 const home =require('./routes/home.js'); 
 const events=require('./routes/events.js');
@@ -20,6 +21,7 @@ app.use(cors());
  let PORT=process.env.PORT||5000;
 
 let URL=process.env.URL;
+
 
  mongoose.connect(URL, {
     useNewUrlParser: true,
