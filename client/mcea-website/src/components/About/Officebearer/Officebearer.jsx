@@ -21,7 +21,7 @@ export default function Officebearer({data,options,Edit,Delete}) {
     },[loaded])
     useEffect(()=>{
       set_gdrive_key(data.photo.split('/')[5]);
-      // console.log(gdirve_key,data)
+      console.log(gdirve_key)
     } )
   return (
     <Container style={{padding:"1rem"}} className="wrapper">
@@ -30,8 +30,8 @@ export default function Officebearer({data,options,Edit,Delete}) {
       
       {
 
-        (loaded===false)?<img style={{objectFit:'cover',padding:'2px',width:'50%',borderRadius:'1rem'}} src={`https://drive.google.com/uc?export=view&id=${gdirve_key}`} alt="image unavailable" loading="lazy" />:
-        <img style={{padding:'2px',width:'50%',borderRadius:'1rem'}} src={loadingSvg} alt={'Oops something went wrong'} /> 
+        (loaded==false)?<img style={{objectFit:'cover',padding:'2px',width:'50%',borderRadius:'1rem'}} src={`https://drive.google.com/uc?export=view&id=${gdirve_key}`} alt="image unavailable"  />:
+        <img style={{padding:'2px',width:'50%',borderRadius:'1rem'}} src={loadingSvg} alt='Oops something went wrong' /> 
       }
         
       
