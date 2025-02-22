@@ -28,7 +28,7 @@ export default function Event_card({data,options,Edit,Delete}) {
     <Container  style={{padding:"1rem"}} className="wrapper">
       <Card style={{backgroundColor:'rgba(177, 168, 168, 0.416)',borderColor:'white',height:'32rem',width:'20rem'}}>
             {
-              (loaded===false)?<img style={{objectFit:'cover',borderRadius:'3px',maxHeight:'15rem'}} src={`https://drive.google.com/uc?export=view&id=${gdirve_key}`} alt="oops someting went wrong" loading="lazy" />
+              (loaded===false)?<img style={{objectFit:'cover',borderRadius:'3px',maxHeight:'15rem'}} src={`https://lh3.googleusercontent.com/d/${gdirve_key}`} alt="oops someting went wrong" loading="lazy" />
               :<img style={{maxHeight:'15rem',backgroundColor:'transparent'}} src={loadingSvg} alt={'Oops something went wrong'} loading="lazy"/> 
             }
             

@@ -30,7 +30,7 @@ export default function Officebearer({data,options,Edit,Delete}) {
       
       {
 
-        (loaded==false)?<img style={{objectFit:'cover',padding:'2px',width:'50%',borderRadius:'1rem'}} src={`https://drive.google.com/uc?export=view&id=${gdirve_key}`} alt="image unavailable"  />:
+        (loaded==false)?<img style={{objectFit:'cover',padding:'2px',width:'50%',borderRadius:'1rem'}} src={`https://lh3.googleusercontent.com/d/${gdirve_key}`} alt="image unavailable"  />:
         <img style={{padding:'2px',width:'50%',borderRadius:'1rem'}} src={loadingSvg} alt='Oops something went wrong' /> 
       }
         
